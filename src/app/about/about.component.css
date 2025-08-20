@@ -1,0 +1,79 @@
+.about-page-content {
+  padding: 50px 20px;
+  max-width: 960px;
+  margin: 0 auto;
+  text-align: left;
+  color: #333;
+}
+
+.about-page-content h2 {
+  text-align: center;
+  font-size: 2.5em;
+  margin-bottom: 40px;
+  color: #282c34;
+}
+
+.profile-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.profile-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+  border: 3px solid #61dafb;
+}
+
+.profile-section p {
+  font-size: 1.1em;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.experience-section, .education-section, .interests-section {
+  margin-bottom: 40px;
+}
+
+.experience-section h3, .education-section h3, .interests-section h3 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #282c34;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 10px;
+}
+
+.job-entry, .degree-entry {
+  margin-bottom: 25px;
+}
+
+.job-entry h4, .degree-entry h4 {
+  font-size: 1.4em;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.job-entry .duration, .degree-entry .duration {
+  font-size: 0.9em;
+  color: #777;
+  margin-bottom: 10px;
+}
+
+.job-entry ul {
+  list-style-type: disc;
+  margin-left: 20px;
+}
+
+.job-entry ul li {
+  margin-bottom: 5px;
+  line-height: 1.5;
+}
+
+.interests-section p {
+  font-size: 1.1em;
+  line-height: 1.6;
+}

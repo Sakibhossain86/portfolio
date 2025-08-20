@@ -1,1 +1,47 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #f8f8f8;
+  color: #333;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #282c34;
+  margin-top: 0;
+  margin-bottom: 0.5em;
+}
+
+p {
+  line-height: 1.6;
+  margin-bottom: 1em;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #61dafb;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Basic layout adjustments to ensure footer is at the bottom */
+html, body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+router-outlet + * { /* This targets the component rendered by router-outlet */
+  flex: 1;
+}
