@@ -1,0 +1,204 @@
+<!-- contact.component.html -->
+<section class="contact-page-content">
+  <h2><i class="fas fa-envelope"></i> Get in Touch</h2>
+  
+  <div class="contact-container">
+    <!-- Contact Form -->
+    <div class="contact-form">
+      <h3>Send me a message</h3>
+      
+      <!-- Submit Message -->
+      <div *ngIf="submitMessage" 
+           class="submit-message" 
+           [ngClass]="submitMessageType">
+        <i [class]="submitMessageType === 'success' ? 'fas fa-check-circle' : 'fas fa-exclamation-circle'"></i>
+        {{ submitMessage }}
+      </div>
+
+      <form [formGroup]="contactForm" (ngSubmit)="onSubmitEmailJS()">
+        <!-- Name Field -->
+        <div class="form-group">
+          <label for="name">
+            <i class="fas fa-user"></i> Name <span class="required">*</span>
+          </label>
+          <input 
+            type="text" 
+            id="name" 
+            formControlName="name"
+            [class.error]="isFieldInvalid('name')"
+            placeholder="Your full name">
+          <div *ngIf="isFieldInvalid('name')" class="error-message">
+            {{ getFieldError('name') }}
+          </div>
+        </div>
+
+        <!-- Email Field -->
+        <div class="form-group">
+          <label for="email">
+            <i class="fas fa-envelope"></i> Email <span class="required">*</span>
+          </label>
+          <input 
+            type="email" 
+            id="email" 
+            formControlName="email"
+            [class.error]="isFieldInvalid('email')"
+            placeholder="your.email@example.com">
+          <div *ngIf="isFieldInvalid('email')" class="error-message">
+            {{ getFieldError('email') }}
+          </div>
+        </div>
+
+        <!-- Subject Field -->
+        <div class="form-group">
+          <label for="subject">
+            <i class="fas fa-tag"></i> Subject <span class="required">*</span>
+          </label>
+          <input 
+            type="text" 
+            id="subject" 
+            formControlName="subject"
+            [class.error]="isFieldInvalid('subject')"
+            placeholder="What's this about?">
+          <div *ngIf="isFieldInvalid('subject')" class="error-message">
+            {{ getFieldError('subject') }}
+          </div>
+        </div>
+
+        <!-- Message Field -->
+        <div class="form-group">
+          <label for="message">
+            <i class="fas fa-comment-dots"></i> Message <span class="required">*</span>
+          </label>
+          <textarea 
+            id="message" 
+            formControlName="message"
+            rows="5" 
+            [class.error]="isFieldInvalid('message')"
+            placeholder="Tell me about your project or inquiry..."></textarea>
+          <div *ngIf="isFieldInvalid('message')" class="error-message">
+            {{ getFieldError('message') }}
+          </div>
+        </div>
+
+        <!-- Submit Buttons -->
+        <div class="form-buttons">
+          <button 
+            type="submit" 
+            class="btn-primary"
+            [disabled]="isSubmitting">
+            <i *ngIf="!isSubmitting" class="fas fa-paper-plane"></i>
+            <i *ngIf="isSubmitting" class="fas fa-spinner fa-spin"></i>
+            {{ isSubmitting ? 'Sending...' : 'Send Email' }}
+          </button>
+
+          <button 
+            type="button" 
+            class="btn-whatsapp"
+            (click)="sendToWhatsApp()"
+            [disabled]="isSubmitting">
+            <i class="fab fa-whatsapp"></i>
+            Send via WhatsApp
+          </button>
+
+          <button 
+            type="button" 
+            class="btn-secondary"
+            (click)="onSubmitMailto()"
+            [disabled]="isSubmitting">
+            <i class="fas fa-external-link-alt"></i>
+            Open Mail App
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Contact Information -->
+    <div class="contact-info">
+      <h3>My Contact Information</h3>
+      <p>Feel free to reach out to me through the form or connect with me directly.</p>
+      
+      <!-- Contact Details -->
+      <div class="contact-details">
+        <div class="contact-item" (click)="sendEmail()">
+          <div class="contact-icon email">
+            <i class="fas fa-envelope"></i>
+          </div>
+          <div class="contact-text">
+            <strong>Email</strong>
+            <span>{{ personalInfo.email }}</span>
+          </div>
+        </div>
+
+        <div class="contact-item" (click)="callPhone()">
+          <div class="contact-icon phone">
+            <i class="fas fa-phone"></i>
+          </div>
+          <div class="contact-text">
+            <strong>Phone</strong>
+            <span>{{ personalInfo.phone }}</span>
+          </div>
+        </div>
+
+        <div class="contact-item" (click)="openWhatsApp()">
+          <div class="contact-icon whatsapp">
+            <i class="fab fa-whatsapp"></i>
+          </div>
+          <div class="contact-text">
+            <strong>WhatsApp</strong>
+            <span>{{ personalInfo.whatsapp }}</span>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-icon location">
+            <i class="fas fa-map-marker-alt"></i>
+          </div>
+          <div class="contact-text">
+            <strong>Location</strong>
+            <span>{{ personalInfo.location }}</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Social Links -->
+      <div class="social-links">
+        <h4>Connect with me</h4>
+        <div class="social-grid">
+          <a *ngFor="let link of socialLinks" 
+             (click)="openSocialLink(link)"
+             class="social-link"
+             [style.background-color]="link.color">
+            <i [class]="link.icon"></i>
+            <span>{{ link.platform }}</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Quick Actions -->
+      <div class="quick-actions">
+        <h4>Quick Actions</h4>
+        <div class="action-buttons">
+          <button class="action-btn email-btn" (click)="sendEmail()">
+            <i class="fas fa-envelope"></i>
+            Email Me
+          </button>
+          <button class="action-btn whatsapp-btn" (click)="openWhatsApp()">
+            <i class="fab fa-whatsapp"></i>
+            WhatsApp
+          </button>
+          <button class="action-btn call-btn" (click)="callPhone()">
+            <i class="fas fa-phone"></i>
+            Call Me
+          </button>
+        </div>
+      </div>
+
+      <!-- Response Time Info -->
+      <div class="response-info">
+        <h4><i class="fas fa-clock"></i> Response Time</h4>
+        <p>I typically respond to messages within <strong>24 hours</strong> during weekdays.</p>
+        <p>For urgent inquiries, please call or message me on WhatsApp.</p>
+      </div>
+    </div>
+  </div>
+</section>

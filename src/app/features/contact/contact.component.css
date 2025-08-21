@@ -1,0 +1,325 @@
+/* Contact Page Layout */
+.contact-page-content {
+  padding: 50px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  color: #333;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+}
+
+.contact-page-content h2 {
+  font-size: 2.5em;
+  text-align: center;
+  margin-bottom: 40px;
+  color: #282c34;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* Container Layout */
+.contact-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  text-align: left;
+}
+
+/* Contact Form Section */
+.contact-form {
+  flex: 1;
+  min-width: 350px;
+  background-color: #f9f9f9;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+}
+
+.contact-form h3 {
+  font-size: 1.8em;
+  color: #282c34;
+  margin-bottom: 20px;
+}
+
+/* Submit Message */
+.submit-message {
+  padding: 12px;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+  font-size: 1em;
+}
+
+.submit-message.success {
+  background-color: #e6f7e9;
+  color: #2e7d32;
+  border: 1px solid #b2dfdb;
+}
+
+.submit-message.error {
+  background-color: #fdecea;
+  color: #c62828;
+  border: 1px solid #f5c6cb;
+}
+
+/* Form Groups */
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #444;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1em;
+  transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #61dafb;
+  outline: none;
+}
+
+/* Error State */
+input.error,
+textarea.error {
+  border-color: #e74c3c;
+  background-color: #fff6f6;
+}
+
+.error-message {
+  color: #e74c3c;
+  font-size: 0.9em;
+  margin-top: 4px;
+}
+
+/* Buttons Section */
+.form-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 15px;
+}
+
+button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 12px 18px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* Primary Button */
+.btn-primary {
+  background-color: #61dafb;
+  color: #282c34;
+}
+
+.btn-primary:hover {
+  background-color: #4fa3d1;
+}
+
+/* WhatsApp Button */
+.btn-whatsapp {
+  background-color: #25d366;
+  color: #fff;
+}
+
+.btn-whatsapp:hover {
+  background-color: #1ebe5d;
+}
+
+/* Secondary Button */
+.btn-secondary {
+  background-color: #eee;
+  color: #333;
+}
+
+.btn-secondary:hover {
+  background-color: #ddd;
+}
+
+/* Contact Info Section */
+.contact-info {
+  flex: 1;
+  min-width: 350px;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+}
+
+.contact-info h3 {
+  font-size: 1.8em;
+  color: #282c34;
+  margin-bottom: 15px;
+}
+
+.contact-info p {
+  font-size: 1.05em;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+/* Contact Details */
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 12px;
+  background: #f8f9fa;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.contact-item:hover {
+  background: #e6f7ff;
+}
+
+.contact-icon {
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 1.2em;
+  color: #fff;
+}
+
+.contact-icon.email { background-color: #61dafb; }
+.contact-icon.phone { background-color: #007bff; }
+.contact-icon.whatsapp { background-color: #25d366; }
+.contact-icon.location { background-color: #ff6f61; }
+
+.contact-text strong {
+  font-size: 1.1em;
+  color: #333;
+}
+
+.contact-text span {
+  display: block;
+  font-size: 0.95em;
+  color: #666;
+}
+
+/* Social Links */
+.social-links {
+  margin-top: 20px;
+}
+
+.social-links h4 {
+  margin-bottom: 12px;
+  font-size: 1.2em;
+}
+
+.social-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  color: #fff;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95em;
+  transition: transform 0.2s;
+}
+
+.social-link:hover {
+  transform: scale(1.05);
+}
+
+/* Quick Actions */
+.quick-actions {
+  margin-top: 25px;
+}
+
+.quick-actions h4 {
+  margin-bottom: 12px;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.action-btn {
+  padding: 10px 14px;
+  font-size: 0.95em;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  color: #fff;
+}
+
+.email-btn { background: #61dafb; }
+.whatsapp-btn { background: #25d366; }
+.call-btn { background: #007bff; }
+
+.action-btn:hover {
+  opacity: 0.9;
+}
+
+/* Response Info */
+.response-info {
+  margin-top: 25px;
+  font-size: 0.95em;
+  color: #666;
+}
+
+.response-info h4 {
+  margin-bottom: 6px;
+  font-size: 1.1em;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .contact-container {
+    flex-direction: column;
+  }
+}
