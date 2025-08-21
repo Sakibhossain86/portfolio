@@ -1,0 +1,1 @@
+body{margin:0;font-family:Arial,sans-serif;background-color:#f8f8f8;color:#333}h1,h2,h3,h4,h5,h6{color:#282c34;margin-top:0;margin-bottom:.5em}p{line-height:1.6;margin-bottom:1em}ul{list-style-type:none;padding:0;margin:0}a{text-decoration:none;color:#61dafb}a:hover{text-decoration:underline}html,body{height:100%}body{display:flex;flex-direction:column}router-outlet+*{flex:1}
